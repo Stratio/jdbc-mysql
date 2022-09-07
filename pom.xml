@@ -22,7 +22,6 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mysql.version>8.0.30</mysql.version>
-        <slf4j.version>1.7.36</slf4j.version>
     </properties>
 
     <dependencies>
@@ -31,56 +30,6 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>log4j</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>apache-log4j-extras</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.apache.logging.log4j</groupId>
-                    <artifactId>log4j-core</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.apache.logging.log4j</groupId>
-                    <artifactId>log4j-web</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.glassfish</groupId>
-                    <artifactId>javax.el</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>jdk.tools</groupId>
-                    <artifactId>jdk.tools</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <version>${slf4j.version}</version>
         </dependency>
 
     </dependencies>
@@ -111,25 +60,6 @@
                                     </includes>
                                 </filter>
                             </filters>
-                            <artifactSet>
-                                <includes>
-                                    <include>com.google.guava:guava</include>
-                                    <include>commons-codec:commons-codec</include>
-                                    <include>commons-lang:commons-lang</include>
-                                    <include>commons-configuration:commons-configuration</include>
-                                    <include>commons-collections:commons-collections</include>
-                                    <include>org.apache.curator:curator-client</include>
-                                    <include>org.apache.curator:curator-framework</include>
-                                    <include>org.apache.hadoop:hadoop-common</include>
-                                    <include>org.apache.hadoop:hadoop-auth</include>                    
-                                    <include>org.apache.httpcomponents:httpclient</include>
-                                    <include>org.apache.httpcomponents:httpcore</include>
-                                    <include>org.apache.thrift:libthrift</include>
-                                    <include>org.apache.zookeeper:zookeeper</include>
-                                    <include>org.slf4j:slf4j-api</include>
-                                    <include>org.slf4j:jcl-over-slf4j</include>
-                                </includes>
-                            </artifactSet>
                             <relocations>
                                 <!-- Relocations for Crossdata -->
                                 <relocation>
@@ -137,20 +67,6 @@
                                     <shadedPattern>embeddedmysql8030.com</shadedPattern>
                                     <includes>
                                         <include>com.**</include>
-                                    </includes>
-                                </relocation>
-                                <relocation>
-                                    <pattern>org</pattern>
-                                    <shadedPattern>embeddedmysql8030.org</shadedPattern>
-                                    <excludes>
-                                        <exclude>com.mysql.cj.jdbc.**</exclude>
-                                    </excludes>
-                                </relocation>
-                                <relocation>
-                                    <pattern>com.mysql.cj.jdbc</pattern>
-                                    <shadedPattern>com.mysql.cj.jdbc8030.jdbc</shadedPattern>
-                                    <includes>
-                                        <include>com.mysql.cj.jdbc.**</include>
                                     </includes>
                                 </relocation>
                             </relocations>
