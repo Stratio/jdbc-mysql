@@ -9,8 +9,8 @@
         <version>0.12.0</version>
     </parent>
 
-    <groupId>com.stratio.hive</groupId>
-    <artifactId>hive-jdbc-2.2.0</artifactId>
+    <groupId>com.stratio.mysql</groupId>
+    <artifactId>mysql-jdbc-8.0.30</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -21,16 +21,16 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <hive.version>8.0.30</hive.version>
+        <mysql.version>8.0.30</mysql.version>
         <slf4j.version>1.7.36</slf4j.version>
     </properties>
 
     <dependencies>
 
         <dependency>
-            <groupId>org.apache.mysql</groupId>
-            <artifactId>hive-jdbc</artifactId>
-            <version>${hive.version}</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>commons-logging</groupId>
@@ -121,18 +121,7 @@
                                     <include>org.apache.curator:curator-client</include>
                                     <include>org.apache.curator:curator-framework</include>
                                     <include>org.apache.hadoop:hadoop-common</include>
-                                    <include>org.apache.hadoop:hadoop-auth</include>
-                                    <include>org.apache.hive:hive-classification</include>
-                                    <include>org.apache.hive:hive-storage-api</include>
-                                    <include>org.apache.hive:hive-common</include>
-                                    <include>org.apache.hive:hive-jdbc</include>
-                                    <include>org.apache.hive:hive-metastore</include>
-                                    <include>org.apache.hive:hive-service</include>
-                                    <include>org.apache.hive:hive-service-rpc</include>
-                                    <include>org.apache.hive:hive-serde</include>
-                                    <include>org.apache.hive:hive-shims</include>
-                                    <include>org.apache.hive.shims:*</include>
-                                    <include>org.apache.hive:hive-upgrade-acid</include>
+                                    <include>org.apache.hadoop:hadoop-auth</include>                    
                                     <include>org.apache.httpcomponents:httpclient</include>
                                     <include>org.apache.httpcomponents:httpcore</include>
                                     <include>org.apache.thrift:libthrift</include>
@@ -145,23 +134,23 @@
                                 <!-- Relocations for Crossdata -->
                                 <relocation>
                                     <pattern>com</pattern>
-                                    <shadedPattern>embeddedhive220.com</shadedPattern>
+                                    <shadedPattern>embeddedmysql8030.com</shadedPattern>
                                     <includes>
                                         <include>com.**</include>
                                     </includes>
                                 </relocation>
                                 <relocation>
                                     <pattern>org</pattern>
-                                    <shadedPattern>embeddedhive220.org</shadedPattern>
+                                    <shadedPattern>embeddedmysql8030.org</shadedPattern>
                                     <excludes>
-                                        <exclude>org.apache.hive.jdbc.**</exclude>
+                                        <exclude>com.mysql.cj.jdbc.**</exclude>
                                     </excludes>
                                 </relocation>
                                 <relocation>
-                                    <pattern>org.apache.hive.jdbc</pattern>
-                                    <shadedPattern>org.apache.hive220.jdbc</shadedPattern>
+                                    <pattern>com.mysql.cj.jdbc</pattern>
+                                    <shadedPattern>com.mysql.cj.jdbc8030.jdbc</shadedPattern>
                                     <includes>
-                                        <include>org.apache.hive.jdbc.**</include>
+                                        <include>com.mysql.cj.jdbc.**</include>
                                     </includes>
                                 </relocation>
                             </relocations>
