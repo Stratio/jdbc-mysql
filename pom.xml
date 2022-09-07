@@ -64,7 +64,7 @@
                                 <!-- Relocations for Crossdata -->
                                 <relocation>
                                     <pattern>com</pattern>
-                                    <shadedPattern>embeddedmysql8030.com</shadedPattern>
+                                    <shadedPattern>embeddedmysql5142.com</shadedPattern>
                                     <includes>
                                         <include>com.**</include>
                                     </includes>
