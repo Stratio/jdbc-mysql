@@ -1,0 +1,12 @@
+*.log
+dependency-reduced-pom.xml
+# Created by .ignore support plugin (hsz.mobi)
+#IDEA Files
+.idea/
+*.iml
+#Target
+/cache
+target/
+
+#Lock files for opened files (LibreOffice)
+.~lock.*
