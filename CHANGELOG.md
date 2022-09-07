@@ -1,5 +1,5 @@
 # Changelog
 
-## 8.0.30-1.0 (upcoming)
+## 5.1.42-1.0 (upcoming)
 
-* Based on Apache Hive JDBC driver 8.0.30
+* Based on MySQL JDBC driver 5.1.42
