@@ -57,6 +57,7 @@
                                         <include>**/java.sql.Driver</include>
                                         <include>**/*.class</include>
                                         <include>**/*.MF</include>
+                                        <include>**/*.properties</include>
                                     </includes>
                                 </filter>
                             </filters>
