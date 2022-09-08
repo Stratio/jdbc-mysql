@@ -60,15 +60,12 @@
                                     </includes>
                                 </filter>
                             </filters>
+                            <artifactSet>
+                                <includes>
+                                   <include>mysql:mysql-connector-java</include>
+                                </includes>
+                            </artifactSet>
                             <relocations>
-                                <!-- Relocations for Crossdata -->
-                                <!--<relocation>
-                                    <pattern>com</pattern>
-                                    <shadedPattern>embeddedmysql8030.com</shadedPattern>
-                                    <includes>
-                                        <include>com.**</include>
-                                    </includes>
-                                </relocation>-->
                                 <relocation>
                                     <pattern>com.mysql</pattern>
                                     <shadedPattern>com.mysql8030</shadedPattern>
