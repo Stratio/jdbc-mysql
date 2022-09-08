@@ -62,11 +62,18 @@
                             </filters>
                             <relocations>
                                 <!-- Relocations for Crossdata -->
-                                <relocation>
+                                <!--<relocation>
                                     <pattern>com</pattern>
                                     <shadedPattern>embeddedmysql8030.com</shadedPattern>
                                     <includes>
                                         <include>com.**</include>
+                                    </includes>
+                                </relocation>-->
+                                <relocation>
+                                    <pattern>com.mysql</pattern>
+                                    <shadedPattern>com.mysql8030</shadedPattern>
+                                    <includes>
+                                        <include>com.mysql.**</include>
                                     </includes>
                                 </relocation>
                             </relocations>
