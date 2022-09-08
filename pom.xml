@@ -63,10 +63,17 @@
                             <relocations>
                                 <!-- Relocations for Crossdata -->
                                 <relocation>
-                                    <pattern>com</pattern>
-                                    <shadedPattern>embeddedmysql5142.com</shadedPattern>
+                                    <pattern>org</pattern>
+                                    <shadedPattern>embeddedmysql5142.org</shadedPattern>
                                     <includes>
-                                        <include>com.**</include>
+                                        <include>org.**</include>
+                                    </includes>
+                                </relocation>
+                                <relocation>
+                                    <pattern>com.mysql</pattern>
+                                    <shadedPattern>com.mysql5142</shadedPattern>
+                                    <includes>
+                                        <include>com.mysql.**</include>
                                     </includes>
                                 </relocation>
                             </relocations>
