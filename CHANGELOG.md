@@ -1,6 +1,11 @@
 # Changelog
 
-## 8.0.30-1.0.0 (upcoming)
+## 8.0.30-1.0.0 (2022-09-08)
+
 
 * Based on MySQL JDBC driver 8.0.30
 * Relocate JDBC driver to com.mysql8030.cj.jdbc.Driver
+
+## Previous development
+
+### 
