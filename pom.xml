@@ -62,9 +62,9 @@
                                 </filter>
                             </filters>
                             <artifactSet>
-                                <includes>
+<!--                                <includes>
                                    <include>mysql:mysql-connector-java</include>
-                                </includes>
+                                </includes>-->
                             </artifactSet>
                             <relocations>
                                 <relocation>
