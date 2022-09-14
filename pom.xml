@@ -11,7 +11,7 @@
 
     <groupId>com.stratio.mysql</groupId>
     <artifactId>mysql-jdbc-5.1.42</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>MySQL JDBC Driver</name>
