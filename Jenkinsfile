@@ -7,7 +7,7 @@ hose {
     DEVTIMEOUT = 60
     RELEASETIMEOUT = 60
     MAXITRETRIES = 2
-    BUILDTOOL_IMAGE = 'stratio/connectors-maven-builder-openjdk-8:1.0.0'
+    BUILDTOOL_IMAGE = 'stratio/connectors-maven-builder-openjdk-8:1.1.0'
     ENABLE_MAVEN_PARALLELBUILD = false
     ANCHORE_TEST = false
     DEPLOYONPRS = true
