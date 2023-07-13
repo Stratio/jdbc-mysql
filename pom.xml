@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (C) 2023 Stratio Big Data Inc., Sucursal en España.
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License as
+    published by the Free Software Foundation; either version 2 of
+    the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02110-1301 USA.
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -11,7 +29,7 @@
 
     <groupId>com.stratio.mysql</groupId>
     <artifactId>mysql-jdbc-8.0.30</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>MySQL JDBC Driver</name>
@@ -57,16 +75,21 @@
                                         <include>**/java.sql.Driver</include>
                                         <include>**/*.class</include>
                                         <include>**/*.MF</include>
+                                        <include>**/*.properties</include>
                                     </includes>
                                 </filter>
                             </filters>
+                            <artifactSet>
+                                <includes>
+                                   <include>mysql:mysql-connector-java</include>
+                                </includes>
+                            </artifactSet>
                             <relocations>
-                                <!-- Relocations for Crossdata -->
                                 <relocation>
-                                    <pattern>com</pattern>
-                                    <shadedPattern>embeddedmysql8030.com</shadedPattern>
+                                    <pattern>com.mysql</pattern>
+                                    <shadedPattern>com.mysql8030</shadedPattern>
                                     <includes>
-                                        <include>com.**</include>
+                                        <include>com.mysql.**</include>
                                     </includes>
                                 </relocation>
                             </relocations>
@@ -76,5 +99,14 @@
             </plugin>
         </plugins>
     </build>
+
+    <licenses>
+        <license>
+            <name>The GNU General Public License, Version 2</name>
+            <url>http://www.gnu.org/licenses/old-licenses/gpl-2.0.html</url>
+            <distribution>repo</distribution>
+            <comments/>
+        </license>
+    </licenses>
 
 </project>
