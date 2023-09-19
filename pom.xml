@@ -34,13 +34,89 @@
 
     <name>MySQL JDBC Driver</name>
     <description>MySQL JDBC Driver</description>
+    <url>https://github.com/Stratio/jdbc-mysql</url>
+
+    <developers>
+        <developer>
+            <name>Cesar Gil</name>
+            <email>cgil@stratio.com</email>
+            <organization>Stratio Big Data Inc., Sucursal en España</organization>
+            <organizationUrl>http://www.stratio.com</organizationUrl>
+        </developer>
+        <developer>
+            <name>Javier Neira</name>
+            <email>jneira@stratio.com</email>
+            <organization>Stratio Big Data Inc., Sucursal en España</organization>
+            <organizationUrl>http://www.stratio.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/Stratio/jdbc-mysql.git</connection>
+        <developerConnection>scm:git:ssh://github.com:Stratio/jdbc-mysql.git</developerConnection>
+        <url>http://github.com/Stratio/jdbc-mysql/tree/master</url>
+    </scm>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mysql.version>8.0.30</mysql.version>
+        <createChecksum>true</createChecksum>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>release-ossrh</id>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>ossrh</id>
+                    <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.9.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <includeDependencySources>true</includeDependencySources>
+                            <dependencySourceIncludes>
+                                <dependencySourceInclude>mysql:mysql-connector-java</dependencySourceInclude>
+                            </dependencySourceIncludes>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <dependencies>
 
@@ -54,6 +130,19 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
@@ -81,6 +170,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+                            <createSourcesJar>true</createSourcesJar>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                             </transformers>
@@ -98,6 +188,7 @@
                                     <includes>
                                         <include>**/java.sql.Driver</include>
                                         <include>**/*.class</include>
+                                        <include>**/*.java</include>
                                     </includes>
                                 </filter>
                             </filters>
