@@ -199,6 +199,13 @@
                             </artifactSet>
                             <relocations>
                                 <relocation>
+                                    <pattern>org</pattern>
+                                    <shadedPattern>embedded.com.mysql5142.org</shadedPattern>
+                                    <includes>
+                                        <include>org.**</include>
+                                    </includes>
+                                </relocation>
+                                <relocation>
                                     <pattern>com.mysql</pattern>
                                     <shadedPattern>com.mysql5142</shadedPattern>
                                     <includes>
