@@ -5,12 +5,12 @@ It adds the MySQL JDBC connector version to class qualified names, so you can us
 
 ```xml
 <dependency>
-    <groupId>com.stratio.mysql</groupId>
+    <groupId>com.stratio.connectors</groupId>
     <artifactId>mysql-jdbc-8.0.30</artifactId>
     <version>${mysql.stratio.version}</version>
 </dependency>
 <dependency>
-    <groupId>com.stratio.mysql</groupId>
+    <groupId>com.stratio.connectors</groupId>
     <artifactId>mysql-jdbc-5.1.42</artifactId>
     <version>${mysql.stratio.old.version}</version>
 </dependency>
