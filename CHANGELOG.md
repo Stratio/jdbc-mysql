@@ -1,5 +1,9 @@
 # Changelog
 
+## 8.0.30-1.0.1 (upcoming)
+
+* Add gpl-v2 license
+
 ## 8.0.30-1.0.0 (2022-09-08)
 
 
