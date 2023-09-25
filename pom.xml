@@ -29,7 +29,7 @@
 
     <groupId>com.stratio.connectors</groupId>
     <artifactId>mysql-jdbc-8.0.30</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1-${revision}</version>
     <packaging>jar</packaging>
 
     <name>MySQL JDBC Driver</name>
