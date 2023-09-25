@@ -1,6 +1,6 @@
 # Changelog
 
-## 5.1.42-1.0.1 (upcoming)
+## 5.1.42-1.0.1 (2023-09-25)
 
 * Add gpl-v2 license
 
