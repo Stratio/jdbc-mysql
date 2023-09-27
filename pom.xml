@@ -176,19 +176,12 @@
                             </transformers>
                             <filters>
                                 <filter>
-                                    <artifact>${groupId}:${artifactId}</artifact>
-                                    <includes>
-                                        <include>LICENSE</include>
-                                        <include>**/*.MF</include>
-                                        <include>**/*.properties</include>
-                                    </includes>
-                                </filter>
-                                <filter>
                                     <artifact>mysql:mysql-connector-java</artifact>
                                     <includes>
                                         <include>**/java.sql.Driver</include>
                                         <include>**/*.class</include>
                                         <include>**/*.java</include>
+                                        <include>**/*.properties</include>
                                     </includes>
                                 </filter>
                             </filters>
