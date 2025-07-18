@@ -95,7 +95,7 @@
                         <configuration>
                             <includeDependencySources>true</includeDependencySources>
                             <dependencySourceIncludes>
-                                <dependencySourceInclude>mysql:mysql-connector-java</dependencySourceInclude>
+                                <dependencySourceInclude>com.mysql:mysql-connector-j</dependencySourceInclude>
                             </dependencySourceIncludes>
                         </configuration>
                     </plugin>
@@ -176,7 +176,7 @@
                             </transformers>
                             <filters>
                                 <filter>
-                                    <artifact>mysql:mysql-connector-java</artifact>
+                                    <artifact>com.mysql:mysql-connector-j</artifact>
                                     <includes>
                                         <include>**/java.sql.Driver</include>
                                         <include>**/*.class</include>
@@ -187,7 +187,7 @@
                             </filters>
                             <artifactSet>
                                 <includes>
-                                   <include>mysql:mysql-connector-java</include>
+                                   <include>com.mysql:mysql-connector-j</include>
                                 </includes>
                             </artifactSet>
                             <relocations>
