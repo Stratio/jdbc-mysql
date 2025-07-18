@@ -193,7 +193,7 @@
                             <relocations>
                                 <relocation>
                                     <pattern>com.mysql</pattern>
-                                    <shadedPattern>com.mysql8030</shadedPattern>
+                                    <shadedPattern>com.mysql8300</shadedPattern>
                                     <includes>
                                         <include>com.mysql.**</include>
                                     </includes>
