@@ -4,7 +4,7 @@
 
 hose {
     EMAIL = 'conectores'
-    UPSTREAM_VERSION = '8.0.30'
+    UPSTREAM_VERSION = '8.3.0'
     VERSIONING_TYPE = 'stratioVersion-3-3'
     DEVTIMEOUT = 60
     RELEASETIMEOUT = 60

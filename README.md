@@ -6,7 +6,7 @@ It adds the MySQL JDBC connector version to class qualified names, so you can us
 ```xml
 <dependency>
     <groupId>com.stratio.connectors</groupId>
-    <artifactId>mysql-jdbc-8.0.30</artifactId>
+    <artifactId>mysql-jdbc-8.3.0</artifactId>
     <version>${mysql.stratio.version}</version>
 </dependency>
 <dependency>
@@ -22,9 +22,9 @@ And then you can do programmatically:
 import java.sql.{Connection, DriverManager => SQLDriverManager}
 import scala.jdk.CollectionConverters.enumerationAsScalaIteratorConverter
 
-// register driver for mysql jdbc version 8.0.30
+// register driver for mysql jdbc version 8.3.0
 SQLDriverManager.registerDriver(new com.mysql8030.cj.jdbc.Driver())
-// use driver 8.0.30
+// use driver 8.3.0
 // Unregister driver for jdbc:mysql://
 SQLDriverManager.getDrivers.asScala
   .filter(_.acceptsURL("jdbc:mysql://"))

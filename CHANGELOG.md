@@ -1,5 +1,9 @@
 # Changelog
 
+## 8.3.0-1.0.0 (upcoming)
+
+* Based on MySQL JDBC driver 8.3.0
+
 ## 8.0.30-1.0.1 (2023-09-28)
 
 * Add gpl-v2 license
