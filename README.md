@@ -11,7 +11,7 @@ It adds the MySQL JDBC connector version to class qualified names, so you can us
 </dependency>
 <dependency>
     <groupId>com.stratio.connectors</groupId>
-    <artifactId>mysql-jdbc-5.1.42</artifactId>
+    <artifactId>mysql-jdbc-5.1.49</artifactId>
     <version>${mysql.stratio.old.version}</version>
 </dependency>
 ``` 
@@ -30,9 +30,9 @@ SQLDriverManager.getDrivers.asScala
   .filter(_.acceptsURL("jdbc:mysql://"))
   .toList
   .foreach(SQLDriverManager.deregisterDriver)
-// register driver for mysql jdbc version 5.1.42
+// register driver for mysql jdbc version 5.1.49
 SQLDriverManager.registerDriver(new com.mysql5142.jdbc.Driver())
-// use driver 5.1.42
+// use driver 5.1.49
 ```
 
 Some dependencies have been relocated to avoid conflicts with other modules used in Stratio, but all of them are included in the final fatjar.

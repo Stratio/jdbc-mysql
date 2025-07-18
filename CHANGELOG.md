@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.1.49-1.0.0 (upcoming)
+
+* Based on MySQL JDBC driver 5.1.49
+
 ## 5.1.42-1.0.1 (2023-09-27)
 
 * Add gpl-v2 license
