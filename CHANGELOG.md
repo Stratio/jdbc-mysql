@@ -1,6 +1,6 @@
 # Changelog
 
-## 5.1.49-1.0.0 (upcoming)
+## 5.1.49-1.0.0 (2025-07-18)
 
 * Based on MySQL JDBC driver 5.1.49
 
