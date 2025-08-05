@@ -16,6 +16,10 @@ hose {
     LABEL_CONTROL = true
 
     DEV = { config ->
-        doDeploy(config)
+        doPackage(conf: config)
+        doGrypeScan(conf: config, artifactsList: [
+                [path: './', name: 'mysql-jdbc']
+        ])
+        doDeploy(conf: config)
     }
 }
