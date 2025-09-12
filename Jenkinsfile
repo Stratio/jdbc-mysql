@@ -16,7 +16,7 @@ hose {
     DEV = { config ->
         doPackage(conf: config)
         doGrypeScan(conf: config, artifactsList: [
-                [path: './', name: 'mysql-jdbc']
+                [sbom: 'target/runtime-dependencies-bom/bom.json', name: 'mysql-jdbc']
         ])
         doDeploy(conf: config)
     }
