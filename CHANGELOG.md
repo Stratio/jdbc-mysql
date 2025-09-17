@@ -1,6 +1,6 @@
 # Changelog
 
-## 8.3.0-1.0.0 (2025-07-18)
+## 8.3.0-1.0.0 (2025-09-17)
 
 * Based on MySQL JDBC driver 8.3.0
 
