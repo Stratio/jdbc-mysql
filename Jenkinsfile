@@ -12,6 +12,7 @@ hose {
     BUILDTOOL_IMAGE = 'stratio/connectors-maven-builder-openjdk-8:1.1.0'
     ENABLE_MAVEN_PARALLELBUILD = false
     ANCHORE_TEST = false
+    GRYPE_TEST = true
     DEPLOYONPRS = true
     LABEL_CONTROL = true
 
