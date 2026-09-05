@@ -12,4 +12,6 @@ hose {
     ANCHORE_TEST = false
     DEPLOYONPRS = true
     LABEL_CONTROL = true
+
+    ABORT_BUILD_IF_ONLY_MODIFIED = "CLAUDE.md,README.md,CODEOWNERS,.github/dependabot.yml,.github/workflows/backport.yml"
 }
