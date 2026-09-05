@@ -17,10 +17,18 @@ opened and merged. Those live in the harness under the `connectors-dev:git-conve
 from `../connectors-internal-docs/agents/CLAUDE.md` if the sibling checkout is there, otherwise:
 
 ```bash
-gh api repos/Stratio/connectors-internal-docs/contents/agents/CLAUDE.md --jq .content | base64 -d
+H=/tmp/connectors-agents; mkdir -p "$H"
+TOK="${GITHUB_TOKEN:-${GH_TOKEN:-}}"
+[ -z "$TOK" ] && [ -f ~/credentials/github.sh ] && { . ~/credentials/github.sh; TOK="$ACTION_USER_TOKEN"; }
+[ -z "$TOK" ] && command -v gh >/dev/null 2>&1 && TOK=$(gh auth token)
+curl -fsSL -H "Authorization: Bearer $TOK" -H "Accept: application/vnd.github.raw" \
+  https://api.github.com/repos/Stratio/connectors-internal-docs/contents/agents/CLAUDE.md \
+  -o "$H/CLAUDE.md"
 ```
 
-(`connectors-internal-docs` is private, so `gh` must be authenticated.)
+Plain `curl`, no `gh` binary needed. `connectors-internal-docs` is **private**, so a token is required —
+`$GITHUB_TOKEN`/`$GH_TOKEN`, `~/credentials/github.sh`, or `gh auth token` where `gh` happens to be
+installed.
 
 ## Specific to this repo
 
